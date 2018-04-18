@@ -111,9 +111,9 @@ public class Test {
 		//IMPRIMIR AEROPUERTO
 		 LinkedList<Aeropuerto> aeropuertos = new LinkedList();
 		 aeropuertos.add(aeropuerto1);aeropuertos.add(aeropuerto2);aeropuertos.add(aeropuerto3);aeropuertos.add(aeropuerto4); 
-		 /*for(Aeropuerto a : aeropuertos)
+		 for(Aeropuerto a : aeropuertos)
 			 	System.out.println(a.mostrarAeropuerto());
-		 */
+		
 		 //IMPRIMIR VUELO
 		 System.out.println(vuelo1.mostrarVuelo());
 	}

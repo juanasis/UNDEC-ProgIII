@@ -115,9 +115,9 @@ public class Vuelo {
 		
 	}
 	public String mostrarVuelo() {
-		return "Vuelo " + codigoVuelo + " - " + avion.getModelo() + "  "+
+		return "Vuelo " + codigoVuelo + " - " + avion.getModelo()+ "  "+fechaHoraSalida.getDayOfWeek() + "  "+
 				fechaHoraSalida + " - " + salida.getCodigo() + "("+salida.verCiudad()+" - "+salida.getNombre()+")"
-				+fechaHoraArribo + " - " + arribo.getCodigo() + "("+arribo.verCiudad()+" - "+arribo.getNombre()+
+				+ "  "+fechaHoraSalida.getDayOfWeek() + "  "+fechaHoraArribo + " - " + arribo.getCodigo() + "("+arribo.verCiudad()+" - "+arribo.getNombre()+
 				" Operado por "+ aerolinea.getNombre() +".Duracion "+ duracionHsMin() ;
 		
 	} 
