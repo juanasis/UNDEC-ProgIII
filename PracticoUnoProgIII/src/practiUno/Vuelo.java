@@ -1,7 +1,7 @@
 package practiUno;
 
 //import java.time.LocalDate;
-import java.time.LocalDateTime;
+import java.time.*;
 import java.util.LinkedList;
 
 public class Vuelo {
@@ -90,13 +90,38 @@ public class Vuelo {
 				+ ", pilotos=" + pilotos + ", avion=" + avion + ", pasajeros=" + pasajeros + "]";
 	}
 	
+	public String estadoAsietno(){
+		return "";
+		//falta hacer los dos for each de asiento y asignaciones y comparar id
+		}
+	/*public int duracionHoras(){
+		return fechaHoraArribo.getHour() - fechaHoraSalida.getHour();
+	}
+	*/
+	public int duracionMinutos(){
+		if(fechaHoraArribo.getMinute() > fechaHoraSalida.getMinute() )
+			return fechaHoraArribo.getMinute() - fechaHoraSalida.getMinute();
+		else
+			return fechaHoraSalida.getMinute() - fechaHoraArribo.getMinute();
+	}
+	
+	public String duracionHsMin(){
+		String tiempo;
+		int hora =(fechaHoraArribo.getHour() - fechaHoraSalida.getHour());
+		int min =duracionMinutos();
+		return ""+hora+"h"+min+"m";
+		
+		
+		
+	}
 	public String mostrarVuelo() {
-		return "Vuelo " + codigoVuelo + " - " + avion.getModelo() + " "+
+		return "Vuelo " + codigoVuelo + " - " + avion.getModelo() + "  "+
 				fechaHoraSalida + " - " + salida.getCodigo() + "("+salida.verCiudad()+" - "+salida.getNombre()+")"
 				+fechaHoraArribo + " - " + arribo.getCodigo() + "("+arribo.verCiudad()+" - "+arribo.getNombre()+
-				" Operado por "+ aerolinea.getNombre();
+				" Operado por "+ aerolinea.getNombre() +".Duracion "+ duracionHsMin() ;
 		
 	} 
+	
 	
 
 }
