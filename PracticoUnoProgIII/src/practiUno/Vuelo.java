@@ -94,10 +94,10 @@ public class Vuelo {
 		return "";
 		//falta hacer los dos for each de asiento y asignaciones y comparar id
 		}
-	/*public int duracionHoras(){
-		return fechaHoraArribo.getHour() - fechaHoraSalida.getHour();
+	public int duracionHoras(){
+		return (fechaHoraArribo.getDayOfYear() - fechaHoraSalida.getDayOfYear())*24 +(fechaHoraArribo.getHour() - fechaHoraSalida.getHour());
 	}
-	*/
+
 	public int duracionMinutos(){
 		if(fechaHoraArribo.getMinute() > fechaHoraSalida.getMinute() )
 			return fechaHoraArribo.getMinute() - fechaHoraSalida.getMinute();
@@ -114,6 +114,7 @@ public class Vuelo {
 		
 		
 	}
+	
 	public String mostrarVuelo() {
 		return "Vuelo " + codigoVuelo + " - " + avion.getModelo()+ "  "+fechaHoraSalida.getDayOfWeek() + "  "+
 				fechaHoraSalida + " - " + salida.getCodigo() + "("+salida.verCiudad()+" - "+salida.getNombre()+")"
@@ -121,6 +122,13 @@ public class Vuelo {
 				" Operado por "+ aerolinea.getNombre() +".Duracion "+ duracionHsMin() ;
 		
 	} 
+	/*○	Mostrar los pilotos registrados en el sistema cuya
+	 *  edad sea superior a 40 años ordenados de manera descendente 
+	 *  por edad, respetando el formato siguiente:
+	 *  Perez, Juan Antonio - 45 años.
+	 *  Lopez, Juan Carlos- 43 años.
+	 *  Martinez, Juan Ignacio - 42 años.
+*/
 	
 	
 

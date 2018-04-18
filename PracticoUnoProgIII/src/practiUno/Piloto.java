@@ -3,7 +3,7 @@ package practiUno;
 import java.time.LocalDate;
 
 public class Piloto {
-
+		
 		private int idPiloto;
 		private String apellido;
 		private String nombres;
@@ -52,6 +52,9 @@ public class Piloto {
 		public String toString() {
 			return "Piloto [idPiloto=" + idPiloto + ", apellido=" + apellido + ", nombres=" + nombres + ", documento="
 					+ documento + ", fechaNacimiento=" + fechaNacimiento + "]";
+		}
+		public String mostrarPiloto(){
+			return apellido + "," + nombres +"-" +(fechaNacimiento.getYear() - 2018 )+"años";
 		}
 		
 		

@@ -10,6 +10,7 @@ public class Asignacion {
 			this.pasajero = pasajero;
 			this.asiento = asiento;
 			this.codigoAsignacion = codigoAsignacion;
+			this.asiento.setEstadoAsiento(false);
 		}
 		public Pasajero getPasajero() {
 			return pasajero;

@@ -1,20 +1,58 @@
 package practiUno;
 
+import java.util.Comparator;
 import java.util.LinkedList;
 
-public class Avion {
 
+
+
+
+
+
+
+public class Avion implements Comparable<Avion>{
+		private double hs;
 		private int idAvion;
 		private String modelo;
 		private String matricula;
 		private LinkedList<Asiento> listaAsientos;
+		private LinkedList<Vuelo> listaVuelos =new LinkedList<Vuelo>() ;
 		public Avion(int idAvion, String modelo, String matricula, LinkedList<Asiento> listaAsientos) {
 			super();
 			this.idAvion = idAvion;
 			this.modelo = modelo;
 			this.matricula = matricula;
 			this.listaAsientos = listaAsientos;
+			this.hs = 0;
+			//this.listaVuelos = vuelos;
 		}
+		
+		
+		public LinkedList<Vuelo> getListaVuelos() {
+			return listaVuelos;
+		}
+
+		public int compareTo(Avion arg0) {
+			return (int) (arg0.hs - this.hs);
+		}
+		public void setListaVuelos(LinkedList<Vuelo> listaVuelos) {
+			this.listaVuelos = listaVuelos;
+		}
+
+
+		public double getHs() {
+			return hs;
+		}
+
+
+		public void setHs(double hs) {
+			this.hs = hs;
+		}
+
+		public void agregarHs(double hs){
+			this.hs += hs;
+		}
+		
 		public int getIdAvion() {
 			return idAvion;
 		}
@@ -48,4 +86,10 @@ public class Avion {
 			
 	
 		
+}
+
+class ordenarPorHoras implements Comparator<Avion>{
+	public int compare(Avion a, Avion b) {
+		return (int)(a.getHs()-b.getHs());
+	}
 }
