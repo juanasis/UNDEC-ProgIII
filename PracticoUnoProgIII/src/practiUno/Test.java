@@ -3,10 +3,9 @@ import java.util.*;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 
-
 public class Test {
-
 	public static void main(String[] args) {
+
 		 Ciudad ciudad1 = new Ciudad(1,"La Rioja","5360");
 		 Ciudad ciudad2 = new Ciudad(2,"Buenos Aires","1000");
 		 Ciudad ciudad3 = new Ciudad(3,"Mendoza","5500");
@@ -90,14 +89,12 @@ public class Test {
 		 lista2.add(asiento13);lista2.add(asiento14);lista2.add(asiento15);lista2.add(asiento16);lista2.add(asiento17);lista2.add(asiento18);
 		 lista2.add(asiento19);lista2.add(asiento20);lista2.add(asiento21);lista2.add(asiento22);lista2.add(asiento23);lista2.add(asiento24);
 		 //LISTA PARA EL TERCER AVION
-		 LinkedList lista3 = new LinkedList();
+		 LinkedList<Asiento> lista3 = new LinkedList<Asiento>();
 		 lista3.add(asiento25);lista3.add(asiento26);lista3.add(asiento27);lista3.add(asiento28);lista3.add(asiento29);lista3.add(asiento30);
 		 lista3.add(asiento31);lista3.add(asiento32);lista3.add(asiento33);lista3.add(asiento34);lista3.add(asiento35);lista3.add(asiento36);
 		 lista3.add(asiento37);lista3.add(asiento38);
-		
-		 	 
 		 //LISTA PARA CUARTO AVION
-		 LinkedList lista4 = new LinkedList();
+		 LinkedList<Asiento> lista4 = new LinkedList<Asiento>();
 		 lista4.add(asiento39);lista4.add(asiento40);lista4.add(asiento41);lista4.add(asiento42);lista4.add(asiento43);lista4.add(asiento44);
 		 
 		 
@@ -158,12 +155,15 @@ public class Test {
 		//IMPRIMIR PILOTOS
 	 LinkedList<Piloto> pilotos = new LinkedList();
 	 pilotos.add(piloto1);pilotos.add(piloto2);pilotos.add(piloto3);pilotos.add(piloto4); 
+	 
 	 for(Piloto a : pilotos){
-		 if( (LocalDate.now().getYear())-a.getFechaNacimiento().getYear() >40)
-		 	System.out.println(a.mostrarPiloto());
+		 Collections.sort(pilotos);
+		 if( a.getEdad(a)>40)			
+		 	 System.out.println(a.mostrarPiloto());
+		 
 	 }
 	 
-	 //	Ranking de aviones respecto a sus horas de vuelo
+	 //	RANKING AVIONES RESPECTO HORAS DE VUELO
 	 for(Avion a:aviones){
 		 for(Vuelo b:a.getListaVuelos()){
 			 a.agregarHs(b.duracionHoras());

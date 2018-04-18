@@ -1,8 +1,8 @@
 package practiUno;
 
 import java.time.LocalDate;
-
-public class Piloto {
+import java.util.*;
+public class Piloto implements Comparable<Piloto> {
 		
 		private int idPiloto;
 		private String apellido;
@@ -17,6 +17,13 @@ public class Piloto {
 			this.nombres = nombres;
 			this.documento = documento;
 			this.fechaNacimiento = fechaNacimiento;
+		}
+		public int getEdad(Piloto p){
+			return (LocalDate.now().getYear() - fechaNacimiento.getYear());
+			
+		}
+		public int compareTo(Piloto arg0) {
+			return (int) (arg0.getEdad(arg0) - this.getEdad(arg0));
 		}
 		public int getIdPiloto() {
 			return idPiloto;

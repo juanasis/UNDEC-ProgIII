@@ -3,13 +3,6 @@ package practiUno;
 import java.util.Comparator;
 import java.util.LinkedList;
 
-
-
-
-
-
-
-
 public class Avion implements Comparable<Avion>{
 		private double hs;
 		private int idAvion;
