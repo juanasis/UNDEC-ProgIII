@@ -3,7 +3,7 @@ package practiUno;
 import java.time.LocalDate;
 import java.util.*;
 public class Piloto implements Comparable<Piloto> {
-		
+	    private double hs  = 0;
 		private int idPiloto;
 		private String apellido;
 		private String nombres;
@@ -18,12 +18,32 @@ public class Piloto implements Comparable<Piloto> {
 			this.documento = documento;
 			this.fechaNacimiento = fechaNacimiento;
 		}
+		
+		
+		
+		public double getHs() {
+			return hs;
+		}
+
+
+
+		public void setHs(double hs) {
+			this.hs = hs;
+		}
+		 public void agregarHs(double hs) {
+			 this.hs+=hs;
+		 }
+
+
 		public int getEdad(Piloto p){
 			return (LocalDate.now().getYear() - fechaNacimiento.getYear());
 			
 		}
 		public int compareTo(Piloto arg0) {
 			return (int) (arg0.getEdad(arg0) - this.getEdad(arg0));
+		}
+		public int compareToHs(Piloto arg0) {
+			return (int) (arg0.getHs() - this.getHs());
 		}
 		public int getIdPiloto() {
 			return idPiloto;
@@ -66,4 +86,9 @@ public class Piloto implements Comparable<Piloto> {
 		
 		
 		
+}
+class ordenarPorHs implements Comparator<Piloto>{
+	public int compare(Piloto a,Piloto b) {
+		return (int)(a.getHs()-b.getHs());
+	}
 }

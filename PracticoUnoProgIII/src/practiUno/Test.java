@@ -106,8 +106,10 @@ public class Test {
 		 //Pilotos para vuelo1
 		 LinkedList<Piloto> listaPiloto1 = new LinkedList<Piloto>();
 		 listaPiloto1.add(piloto1);listaPiloto1.add(piloto2);
+		 LinkedList<Piloto> listaPiloto2 = new LinkedList<Piloto>();
+		 listaPiloto2.add(piloto1);listaPiloto2.add(piloto4);
 		 Vuelo vuelo1 = new Vuelo("AR2443",aeropuerto1,LocalDateTime.of(2018, 04, 9, 21, 10),aeropuerto2,LocalDateTime.of(2018, 04, 10, 22, 45),aerolinea2,listaPiloto1,avion1,paraVuelo1);
-		 Vuelo vuelo2 = new Vuelo("AR2444",aeropuerto2,LocalDateTime.of(2018, 04, 12, 8, 10),aeropuerto1,LocalDateTime.of(2018, 04, 12,10 , 45),aerolinea1,listaPiloto1,avion1,paraVuelo1);
+		 Vuelo vuelo2 = new Vuelo("AR2444",aeropuerto2,LocalDateTime.of(2018, 04, 12, 8, 10),aeropuerto1,LocalDateTime.of(2018, 04, 12,10 , 45),aerolinea1,listaPiloto2,avion1,paraVuelo1);
 		
 
 		 LinkedList<Vuelo> listaV1 = new LinkedList<Vuelo>();
@@ -122,6 +124,11 @@ public class Test {
 		 listaV2.add(vuelo3);
 		 listaV2.add(vuelo4);
 		 
+		 LinkedList<Vuelo> vuelos = new LinkedList<Vuelo>();
+		 vuelos.add(vuelo1);
+		 vuelos.add(vuelo2);
+		 vuelos.add(vuelo3);
+		 vuelos.add(vuelo4);
 		 
 		 avion1.getListaVuelos().add(vuelo1);
 		 
@@ -153,6 +160,13 @@ public class Test {
 		 }
 		 
 		//IMPRIMIR PILOTOS
+			/*Mostrar los pilotos registrados en el sistema cuya
+			 *  edad sea superior a 40 años ordenados de manera descendente 
+			 *  por edad, respetando el formato siguiente:
+			 *  Perez, Juan Antonio - 45 años.
+			 *  Lopez, Juan Carlos- 43 años.
+			 *  Martinez, Juan Ignacio - 42 años.
+		*/
 	 LinkedList<Piloto> pilotos = new LinkedList();
 	 pilotos.add(piloto1);pilotos.add(piloto2);pilotos.add(piloto3);pilotos.add(piloto4); 
 	 
@@ -187,9 +201,20 @@ public class Test {
 		 }
 	*/
 	
+	 
 	for(Avion a:aviones){
 		System.out.println(a.getModelo()+" "+a.getMatricula()+" - "+a.getHs()+" hs de Vuelo");
 	}
-	
+	/*○	Ranking de pilotos con más horas de vuelo.*/
+	for(Piloto p:pilotos) {
+		for(Vuelo v:vuelos) {
+			if(p.getIdPiloto() == v.getPilotos().get(0).getIdPiloto() || p.getIdPiloto() == v.getPilotos().get(1).getIdPiloto() )
+				p.agregarHs(v.duracionHoras());
+		}
+	}
+	Collections.sort(pilotos);
+	for(Piloto p:pilotos) {
+		System.out.println(""+p.mostrarPiloto()+" "+ p.getHs()+"Horas de Vuelo ");
+	}
 	}
 }

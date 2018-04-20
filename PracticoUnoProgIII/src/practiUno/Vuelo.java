@@ -122,13 +122,8 @@ public class Vuelo {
 				" Operado por "+ aerolinea.getNombre() +".Duracion "+ duracionHsMin() ;
 		
 	} 
-	/*○	Mostrar los pilotos registrados en el sistema cuya
-	 *  edad sea superior a 40 años ordenados de manera descendente 
-	 *  por edad, respetando el formato siguiente:
-	 *  Perez, Juan Antonio - 45 años.
-	 *  Lopez, Juan Carlos- 43 años.
-	 *  Martinez, Juan Ignacio - 42 años.
-*/
+	
+
 	
 	
 
