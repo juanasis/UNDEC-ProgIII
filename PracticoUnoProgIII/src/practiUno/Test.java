@@ -212,8 +212,10 @@ public class Test {
 				p.agregarHs(v.duracionHoras());
 		}
 	}
-	Collections.sort(pilotos);
+	
+	Collections.sort(pilotos, new ordenarPorHs());
 	for(Piloto p:pilotos) {
+		
 		System.out.println(""+p.mostrarPiloto()+" "+ p.getHs()+"Horas de Vuelo ");
 	}
 	}

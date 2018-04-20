@@ -89,6 +89,6 @@ public class Piloto implements Comparable<Piloto> {
 }
 class ordenarPorHs implements Comparator<Piloto>{
 	public int compare(Piloto a,Piloto b) {
-		return (int)(a.getHs()-b.getHs());
+		return (int)(b.getHs()-a.getHs());
 	}
 }
