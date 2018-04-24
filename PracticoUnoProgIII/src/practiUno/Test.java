@@ -2,6 +2,7 @@ package practiUno;
 import java.util.*;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.time.Period;
 
 public class Test {
 	public static void main(String[] args) {
@@ -172,7 +173,9 @@ public class Test {
 	 
 	 for(Piloto a : pilotos){
 		 Collections.sort(pilotos);
-		 if( a.getEdad(a)>40)			
+		 Period fecha;
+			fecha = Period.between(a.getFechaNacimiento(), LocalDate.now());
+		 if( fecha.getYears()>40)			
 		 	 System.out.println(a.mostrarPiloto());
 		 
 	 }
