@@ -4,7 +4,7 @@ import java.util.Comparator;
 import java.util.LinkedList;
 
 public class Avion implements Comparable<Avion>{
-		private double hs;
+		private int hs;
 		private int idAvion;
 		private String modelo;
 		private String matricula;
@@ -33,16 +33,16 @@ public class Avion implements Comparable<Avion>{
 		}
 
 
-		public double getHs() {
+		public int getHs() {
 			return hs;
 		}
 
 
-		public void setHs(double hs) {
+		public void setHs(int hs) {
 			this.hs = hs;
 		}
 
-		public void agregarHs(double hs){
+		public void agregarHs(int hs){
 			this.hs += hs;
 		}
 		
