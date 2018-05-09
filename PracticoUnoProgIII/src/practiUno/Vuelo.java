@@ -109,18 +109,52 @@ public class Vuelo {
 		String tiempo;
 		int hora =(fechaHoraArribo.getHour() - fechaHoraSalida.getHour());
 		int min =duracionMinutos();
-		return ""+hora+"h"+min+"m";
+		return ""+hora+"h "+min+"m";
 		
 		
 		
 	}
 	
 	public String mostrarVuelo() {
-		return "Vuelo " + codigoVuelo + " - " + avion.getModelo()+ "  "+fechaHoraSalida.getDayOfWeek() + "  "+
-				fechaHoraSalida + " - " + salida.getCodigo() + "("+salida.verCiudad()+" - "+salida.getNombre()+")"
-				+ "  "+fechaHoraSalida.getDayOfWeek() + "  "+fechaHoraArribo + " - " + arribo.getCodigo() + "("+arribo.verCiudad()+" - "+arribo.getNombre()+
-				" Operado por "+ aerolinea.getNombre() +".Duracion "+ duracionHsMin() ;
+		return "Vuelo " + codigoVuelo + " - " + avion.getModelo()+ "  \n"+traductorDia(fechaHoraSalida.getDayOfWeek()) + "  "+
+				fechaHoraSalida.getDayOfMonth()+ " de " +traductorMes(fechaHoraSalida.getMonth())+" "+ fechaHoraSalida.getHour()+":"+ fechaHoraSalida.getMinute() + " " + salida.getCodigo() + "("+salida.verCiudad()+" - "+salida.getNombre()+")"
+				+ "  \n"+traductorDia(fechaHoraArribo.getDayOfWeek())  + "  "+
+						fechaHoraArribo.getDayOfMonth()+  " de "+traductorMes(fechaHoraArribo.getMonth())+" "+ fechaHoraArribo.getHour()+":"+ fechaHoraArribo.getMinute() + " " + arribo.getCodigo() + "("+arribo.verCiudad()+" - "+arribo.getNombre()+
+				" \nOperado por "+ aerolinea.getNombre() +".Duracion "+ duracionHsMin() ;
 		
+	}
+	private String traductorMes(Month month) {
+		// TODO Auto-generated method stub
+	    switch(month) {
+	    	case JANUARY : return "ENERO ";
+	    	case FEBRUARY : return "FEBRERO ";
+	    	case MARCH: return "MARZO";
+	    	case APRIL: return "ABRIL";
+	    	case MAY: return "MAYO";
+	    	case JUNE: return "JUNIO";
+	    	case JULY: return "JULIO";
+	    	case AUGUST: return "AGOSTO";
+	    	case SEPTEMBER: return "SEPTIEMBRE";
+	    	case OCTOBER: return "OCTUBRE";
+	    	case NOVEMBER: return "NOBIEMBRE";
+	    	case DECEMBER: return "DICIEMBRE";
+	    	default: System.out.println("error");
+		      }
+		return null;
+	}
+	private String traductorDia(DayOfWeek dayOfWeek) {
+		// TODO Auto-generated method stub
+		switch(dayOfWeek) {
+		case MONDAY : return "LUNES";
+		case TUESDAY: return "MARTES";
+		case WEDNESDAY: return "MIERCOLES";
+		case THURSDAY : return "JUEVES";
+		case FRIDAY : return "VIERNES"; 
+		case SATURDAY  : return "SABADO"; 
+		case  SUNDAY : return "DOMINGO"; 
+		default: System.out.println("error");
+		}
+		return null;
 	} 
 	
 

@@ -12,7 +12,7 @@ public class Test {
 		 Ciudad ciudad3 = new Ciudad(3,"Mendoza","5500");
 		 Ciudad ciudad4 = new Ciudad(4,"Tucman","4000");
 		 Aeropuerto aeropuerto1 = new Aeropuerto(1,"Aeropuerto Capitán Vicente Almandos Almonacid", ciudad1,"IRJ");
-		 Aeropuerto aeropuerto2 = new Aeropuerto(2,"Aeropuerto Buenos Aires Jorge Nwebery", ciudad2,"AEP");
+		 Aeropuerto aeropuerto2 = new Aeropuerto(2,"Aeropuerto Buenos Aires Jorge Newbery", ciudad2,"AEP");
 		 Aeropuerto aeropuerto3 = new Aeropuerto(3,"Aeropuerto El Plumerillo", ciudad3,"MDZ");
 		 Aeropuerto aeropuerto4 = new Aeropuerto(4,"Aeropuerto Benjamín Matienzo", ciudad4,"TUC");
 		 Pasajero pasajero1 = new Pasajero(1,"20123456784","Ramírez", "Ramiro Ramón","12345678");
@@ -109,7 +109,7 @@ public class Test {
 		 listaPiloto1.add(piloto1);listaPiloto1.add(piloto2);
 		 LinkedList<Piloto> listaPiloto2 = new LinkedList<Piloto>();
 		 listaPiloto2.add(piloto1);listaPiloto2.add(piloto4);
-		 Vuelo vuelo1 = new Vuelo("AR2443",aeropuerto1,LocalDateTime.of(2018, 04, 9, 21, 10),aeropuerto2,LocalDateTime.of(2018, 04, 10, 22, 45),aerolinea2,listaPiloto1,avion1,paraVuelo1);
+		 Vuelo vuelo1 = new Vuelo("AR2443",aeropuerto1,LocalDateTime.of(2018, 04, 10, 21, 10),aeropuerto2,LocalDateTime.of(2018, 04, 10, 22, 45),aerolinea2,listaPiloto1,avion4,paraVuelo1);
 		 Vuelo vuelo2 = new Vuelo("AR2444",aeropuerto2,LocalDateTime.of(2018, 04, 12, 8, 10),aeropuerto1,LocalDateTime.of(2018, 04, 12,10 , 45),aerolinea1,listaPiloto2,avion1,paraVuelo1);
 		
 
