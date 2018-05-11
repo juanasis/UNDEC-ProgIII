@@ -27,8 +27,8 @@ public class Test {
 		 //LocalDate fecha2 = LocalDate.of(1978, 8, 8);
 		 //LocalDate fecha3 = LocalDate.of(1950, 05, 05);
 		 //LocalDate fecha4 = LocalDate.of(1960, 10, 10);
-		 Piloto piloto1 = new Piloto(1,"Perez", "Juan Antonio", "07071970",LocalDate.of(1973, 07, 07));
-		 Piloto piloto2 = new Piloto(2,"Martínez", "Juan Ignacio", "08081978",LocalDate.of(1976, 8, 8));
+		 Piloto piloto1 = new Piloto(1,"Perez", "Juan Antonio", "07071970",LocalDate.of(1972, 07, 07));
+		 Piloto piloto2 = new Piloto(2,"Martínez", "Juan Ignacio", "08081978",LocalDate.of(1975, 8, 8));
 		 Piloto piloto3 = new Piloto(3,"López", "Juan Carlos", "05051950",LocalDate.of(1975, 05, 05));
 		 Piloto piloto4 = new Piloto(4, "Gómez","Juan Gabriel", "10101960",LocalDate.of(1980, 10, 10));
 		 Asiento asiento1 = new Asiento(1,"A1");
@@ -155,28 +155,21 @@ public class Test {
 		 System.out.println(vuelo1.mostrarVuelo());
 	
 		 //IMPRIMIR ESTADOS ASIENTOS
-		 System.out.println("detalle de asignaciones VUELO: "+vuelo1.getCodigoVuelo());
+		 System.out.println("Detalle de asignaciones - VUELO "+vuelo1.getCodigoVuelo());
 		 for(Asiento a:lista1){
-			 System.out.println("Asiento "+a.getNumeroAsiento()+" "+((a.isEstadoAsiento()==true)?"Libre":"Ocupado"));
+			 System.out.println("Asiento "+a.getNumeroAsiento()+"- "+((a.isEstadoAsiento()==true)?"Libre":"Ocupado"));
 		 }
 		 
 		//IMPRIMIR PILOTOS
-			/*Mostrar los pilotos registrados en el sistema cuya
-			 *  edad sea superior a 40 años ordenados de manera descendente 
-			 *  por edad, respetando el formato siguiente:
-			 *  Perez, Juan Antonio - 45 años.
-			 *  Lopez, Juan Carlos- 43 años.
-			 *  Martinez, Juan Ignacio - 42 años.
-		*/
-	 LinkedList<Piloto> pilotos = new LinkedList();
+
+	 LinkedList<Piloto> pilotos = new LinkedList<Piloto>();
 	 pilotos.add(piloto1);pilotos.add(piloto2);pilotos.add(piloto3);pilotos.add(piloto4); 
-	 
-	 for(Piloto a : pilotos){
-		 Collections.sort(pilotos);
-		 Period fecha;
+	 Collections.sort(pilotos); 
+	 for(Piloto a : pilotos){ 
+		    Period fecha;
 			fecha = Period.between(a.getFechaNacimiento(), LocalDate.now());
-		 if( fecha.getYears()>40)			
-		 	 System.out.println(a.mostrarPiloto());
+			if( fecha.getYears()>40)			
+		 	    System.out.println(a.mostrarPiloto());
 		 
 	 }
 	 
@@ -219,7 +212,10 @@ public class Test {
 	Collections.sort(pilotos, new ordenarPorHs());
 	for(Piloto p:pilotos) {
 		
-		System.out.println(""+p.mostrarPiloto()+" "+ p.getHs()+"Horas de Vuelo ");
+		System.out.println(""+p.mostrarPiloto()+" "+ p.getHs()+" hs de Vuelo ");
 	}
+	Avion v1 = new Avion(1,"Airbus A340-313X","LV-FPV",lista1);;
+	System.out.println("avion " + v1);
 	}
+	
 }

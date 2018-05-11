@@ -85,7 +85,7 @@ public class Piloto implements Comparable<Piloto> {
 					+ documento + ", fechaNacimiento=" + fechaNacimiento + "]";
 		}
 		public String mostrarPiloto(){
-			return apellido + "," + nombres +"-" +(fechaNacimiento.getYear() - 2018 )+"años";
+			return apellido + "," + nombres +" - " +(Period.between(this.getFechaNacimiento(), LocalDate.now())).getYears()+" años.";
 		}
 		
 		
@@ -95,4 +95,10 @@ class ordenarPorHs implements Comparator<Piloto>{
 	public int compare(Piloto a,Piloto b) {
 		return (int)(b.getHs()-a.getHs());
 	}
-}
+}class ordenarPorEdad implements Comparator<Piloto>{
+		public int compare(Piloto a,Piloto b) {
+			return (int)(b.getEdad(b)-a.getEdad(a));
+		}
+	}
+	
+
