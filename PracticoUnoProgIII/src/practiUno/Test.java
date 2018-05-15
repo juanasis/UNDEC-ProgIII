@@ -6,7 +6,7 @@ import java.time.Period;
 
 public class Test {
 	public static void main(String[] args) {
-
+		
 		 Ciudad ciudad1 = new Ciudad(1,"La Rioja","5360");
 		 Ciudad ciudad2 = new Ciudad(2,"Buenos Aires","1000");
 		 Ciudad ciudad3 = new Ciudad(3,"Mendoza","5500");
@@ -103,6 +103,8 @@ public class Test {
 		 Avion avion2 = new Avion(2,"Airbus A330-233","LV-FNI",lista2);
 		 Avion avion3 = new Avion(3,"Boein 737-8MB","LV-FYK",lista3);
 		 Avion avion4 = new Avion(4,"Embraer ERJ-190-100AR","LV-CIH",lista4);
+		// GestorAvion gestorAvion1 = new GestorAvion();
+		 
 		 
 		 //Pilotos para vuelo1
 		 LinkedList<Piloto> listaPiloto1 = new LinkedList<Piloto>();
@@ -144,6 +146,16 @@ public class Test {
 		 aviones.add(avion1);aviones.add(avion2);
 		 aviones.add(avion3);aviones.add(avion4);
 		 
+
+		/*for (Avion avion : aviones) {
+				 if(gestorAvion1.crearAvion(avion)) {
+					 System.out.println("se creo el avion");
+				 }
+				 else {
+					 System.out.println("no se creo el avion");
+			 }
+			 }
+		*/
 		 
 		//IMPRIMIR AEROPUERTO
 		 LinkedList<Aeropuerto> aeropuertos = new LinkedList();
@@ -214,8 +226,7 @@ public class Test {
 		
 		System.out.println(""+p.mostrarPiloto()+" "+ p.getHs()+" hs de Vuelo ");
 	}
-	Avion v1 = new Avion(1,"Airbus A340-313X","LV-FPV",lista1);;
-	System.out.println("avion " + v1);
+
 	}
 	
 }

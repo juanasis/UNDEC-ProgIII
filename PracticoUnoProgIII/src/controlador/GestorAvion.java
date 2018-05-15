@@ -1,13 +1,17 @@
-package practiUno;
+package controlador;
 
 import java.util.*;
+
+import practiUno.Avion;
 
 public class GestorAvion {
 	private ArrayList<Avion> aviones;
 	private static GestorAvion soyElGestorAvion;
-	private GestorAvion() {
+	
+	public GestorAvion() {
 		aviones = new ArrayList<Avion>();
 	}
+	
 	public static GestorAvion getInstancia() {
 		if(soyElGestorAvion == null) {
 			soyElGestorAvion = new GestorAvion();
@@ -16,12 +20,10 @@ public class GestorAvion {
 	}
 	
 
-	public boolean addAvion(int idAvion, String modelo, String matricula, LinkedList<Asiento> listaAsientos)throws AvionMalCargadoExeption{
-		try {if(idAvion > 0) {
-			
-			Avion aux = new Avion(idAvion,  modelo,  matricula,  listaAsientos);
-				if(!existeAvion(aux)) {
-					return aviones.add(aux);
+	public boolean crearAvion(Avion pAvion)throws AvionMalCargadoExeption{
+		try { if(pAvion.getListaAsientos() != null && pAvion.getIdAvion() > 0 ) {
+				if(!existeAvion(pAvion)) {
+					return aviones.add(pAvion);
 			}
 			
 		} 
@@ -35,7 +37,7 @@ public class GestorAvion {
 	}
 	private boolean existeAvion(Avion a){
 		for(Avion aux: aviones){
-			if (aux.equals(a)){
+			if (aux.getIdAvion() == a.getIdAvion() || aux.getMatricula() == a.getMatricula() ){
 				return true;
 			}
 		}

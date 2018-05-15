@@ -1,4 +1,4 @@
-package practiUno;
+package controlador;
 
 public class AvionMalCargadoExeption extends RuntimeException {
 	public AvionMalCargadoExeption() {
