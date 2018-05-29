@@ -7,7 +7,7 @@ public class Aeropuerto {
 	private Ciudad ciudad;
 	private String codigo;
 	
-	public Aeropuerto(int idAeropuerto, String nombre, Ciudad ciudad, String codigo) {
+	public Aeropuerto(int idAeropuerto, String nombre, String codigo, Ciudad ciudad) {
 		super();
 		this.idAeropuerto = idAeropuerto;
 		this.nombre = nombre;
@@ -59,6 +59,12 @@ public class Aeropuerto {
 	}
 	public String verCiudad() {
 		return ciudad.getNombre();
+	}
+
+	public String showDenomination() {
+		// TODO Auto-generated method stub
+		//Aeropuerto Capitán Vicente Almandos Almonacid - La Rioja - IRJ
+			return ""+this.nombre+" - "+this.getCiudad().getNombre()+" - "+this.codigo;
 	}
 	
 	

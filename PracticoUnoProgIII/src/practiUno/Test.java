@@ -11,10 +11,10 @@ public class Test {
 		 Ciudad ciudad2 = new Ciudad(2,"Buenos Aires","1000");
 		 Ciudad ciudad3 = new Ciudad(3,"Mendoza","5500");
 		 Ciudad ciudad4 = new Ciudad(4,"Tucman","4000");
-		 Aeropuerto aeropuerto1 = new Aeropuerto(1,"Aeropuerto Capitán Vicente Almandos Almonacid", ciudad1,"IRJ");
-		 Aeropuerto aeropuerto2 = new Aeropuerto(2,"Aeropuerto Buenos Aires Jorge Newbery", ciudad2,"AEP");
-		 Aeropuerto aeropuerto3 = new Aeropuerto(3,"Aeropuerto El Plumerillo", ciudad3,"MDZ");
-		 Aeropuerto aeropuerto4 = new Aeropuerto(4,"Aeropuerto Benjamín Matienzo", ciudad4,"TUC");
+		 Aeropuerto aeropuerto1 = new Aeropuerto(1,"Aeropuerto Capitán Vicente Almandos Almonacid","IRJ", ciudad1);
+		 Aeropuerto aeropuerto2 = new Aeropuerto(2,"Aeropuerto Buenos Aires Jorge Newbery","AEP", ciudad2);
+		 Aeropuerto aeropuerto3 = new Aeropuerto(3,"Aeropuerto El Plumerillo","MDZ", ciudad3);
+		 Aeropuerto aeropuerto4 = new Aeropuerto(4,"Aeropuerto Benjamín Matienzo","TUC", ciudad4);
 		 Pasajero pasajero1 = new Pasajero(1,"20123456784","Ramírez", "Ramiro Ramón","12345678");
 		 Pasajero pasajero2 = new Pasajero(2,"20102030404","Fernandez", "Fernando Fermín","10203040");
 		 Pasajero pasajero3 = new Pasajero(3,"20987654324","Martinez", "Martín Marcos","98765432");
