@@ -87,6 +87,22 @@ public class Piloto implements Comparable<Piloto> {
 		public String mostrarPiloto(){
 			return apellido + "," + nombres +" - " +(Period.between(this.getFechaNacimiento(), LocalDate.now())).getYears()+" años.";
 		}
+
+
+
+		public String getSurnameAndName() {
+			// TODO Auto-generated method stub
+			return ""+this.getApellido()+", "+this.getNombres();
+		}
+
+
+
+		public int getAge(LocalDate of) {
+		    if(of.getMonthValue() > this.getFechaNacimiento().getMonthValue())
+		    	return of.getYear() - this.getFechaNacimiento().getYear() ;
+		    else
+		    	return (of.getYear() - this.getFechaNacimiento().getYear()) - 1 ;
+		}
 		
 		
 		

@@ -4,6 +4,8 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import java.time.LocalDate;
 import org.junit.jupiter.api.Test;
 
+import practiUno.Piloto;
+
 public class PilotoTest {
 
 	@Test
@@ -21,7 +23,7 @@ public class PilotoTest {
 	}
 
 	private Piloto makeAPilot() {
-		return new Piloto(1, "Perez", "Juan Antonio", "07071970", LocalDate.of(1984, 1, 31));
+		return new Piloto(1, "Perez", "Juan Antonio", "07071970", LocalDate.of(1984, 3, 13));
 	}
 
 }
