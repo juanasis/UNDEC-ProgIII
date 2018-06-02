@@ -4,6 +4,12 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import java.time.LocalDateTime;
 import org.junit.jupiter.api.Test;
 
+import practiUno.Aerolinea;
+import practiUno.Aeropuerto;
+import practiUno.Avion;
+import practiUno.Ciudad;
+import practiUno.Vuelo;
+
 class VueloTest {
 
 	@Test
@@ -17,7 +23,7 @@ class VueloTest {
 				+ "Martes 10 de abril 21:10 IRJ (La Rioja - Aeropuerto Capitán Vicente Almandos Almonacid)\r\n"
 				+ "Martes 10 de abril 22:45 AEP (Buenos Aires - Aeropuerto Buenos Aires Jorge Newbery)\r\n"
 				+ "Operado por Austral. Duración 1h 35m";
-
+		System.out.println(output);
 		assertEquals(expected, output);
 
 	}
@@ -42,7 +48,7 @@ class VueloTest {
 	//
 	/*---------Factories---------------*/
 
-	private Vuelo makeAFlight() {
+	public Vuelo makeAFlight() {
 
 		Ciudad laRioja = new Ciudad(1, "La Rioja", "5300");
 		Ciudad buenosAires = new Ciudad(2, "Buenos Aires", "1000");

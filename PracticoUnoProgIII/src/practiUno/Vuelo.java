@@ -129,7 +129,7 @@ public class Vuelo {
 	    	case JANUARY : return "ENERO ";
 	    	case FEBRUARY : return "FEBRERO ";
 	    	case MARCH: return "MARZO";
-	    	case APRIL: return "ABRIL";
+	    	case APRIL: return "abril";
 	    	case MAY: return "MAYO";
 	    	case JUNE: return "JUNIO";
 	    	case JULY: return "JULIO";
@@ -145,16 +145,27 @@ public class Vuelo {
 	private String traductorDia(DayOfWeek dayOfWeek) {
 		// TODO Auto-generated method stub
 		switch(dayOfWeek) {
-		case MONDAY : return "LUNES";
-		case TUESDAY: return "MARTES";
-		case WEDNESDAY: return "MIERCOLES";
-		case THURSDAY : return "JUEVES";
-		case FRIDAY : return "VIERNES"; 
-		case SATURDAY  : return "SABADO"; 
-		case  SUNDAY : return "DOMINGO"; 
+		case MONDAY : return "Lunes";
+		case TUESDAY: return "Martes";
+		case WEDNESDAY: return "Miercoles";
+		case THURSDAY : return "Jueves";
+		case FRIDAY : return "Viernes"; 
+		case SATURDAY  : return "Sabado"; 
+		case  SUNDAY : return "Domingo"; 
 		default: System.out.println("error");
 		}
 		return null;
+	}
+	public String getDetails() {
+		// "Vuelo AR2443 - Embraer ERJ-190-100AR\r\n"
+		//		+ "Martes 10 de abril 21:10 IRJ (La Rioja - Aeropuerto Capitán Vicente Almandos Almonacid)\r\n"
+			//	+ "Martes 10 de abril 22:45 AEP (Buenos Aires - Aeropuerto Buenos Aires Jorge Newbery)\r\n"
+				//+ "Operado por Austral. Duración 1h 35m"
+		return "Vuelo "+this.getCodigoVuelo()+" - "+this.avion.getModelo()+"\r\n"+traductorDia(fechaHoraSalida.getDayOfWeek()) + " "+
+		fechaHoraSalida.getDayOfMonth()+ " de " +traductorMes(fechaHoraSalida.getMonth())+" "+ fechaHoraSalida.getHour()+":"+ fechaHoraSalida.getMinute() + " " + salida.getCodigo() + " ("+salida.verCiudad()+" - "+salida.getNombre()+")"
+		+ "\r\n"+traductorDia(fechaHoraArribo.getDayOfWeek())  + " "+
+				fechaHoraArribo.getDayOfMonth()+  " de "+traductorMes(fechaHoraArribo.getMonth())+" "+ fechaHoraArribo.getHour()+":"+ fechaHoraArribo.getMinute() + " " + arribo.getCodigo() + " ("+arribo.verCiudad()+" - "+arribo.getNombre()+
+		")\r\nOperado por "+ aerolinea.getNombre() +". Duración "+ duracionHsMin() ;
 	} 
 	
 
