@@ -105,14 +105,13 @@ public class Vuelo {
 			return fechaHoraSalida.getMinute() - fechaHoraArribo.getMinute();
 	}
 	
+	
 	public String duracionHsMin(){
 		String tiempo;
 		int hora =(fechaHoraArribo.getHour() - fechaHoraSalida.getHour());
 		int min =duracionMinutos();
 		return ""+hora+"h "+min+"m";
-		
-		
-		
+				
 	}
 	
 	public String mostrarVuelo() {

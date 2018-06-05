@@ -81,6 +81,8 @@ public class Avion implements Comparable<Avion>{
 		
 }
 
+
+
 class ordenarPorHoras implements Comparator<Avion>{
 	public int compare(Avion a, Avion b) {
 		return (int)(a.getHs()-b.getHs());

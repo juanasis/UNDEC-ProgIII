@@ -3,15 +3,21 @@ package controlador;
 import java.util.*;
 
 import practiUno.Avion;
+import practiUno.Vuelo;
 
 public class GestorAvion {
-	private ArrayList<Avion> aviones;
+	private LinkedList<Avion> aviones;
 	private static GestorAvion soyElGestorAvion;
 	
 	public GestorAvion() {
-		aviones = new ArrayList<Avion>();
+		
 	}
 	
+	public GestorAvion(LinkedList<Avion> linkedList) {
+		// TODO Auto-generated constructor stub
+		aviones = new LinkedList<Avion>();
+	}
+
 	public static GestorAvion getInstancia() {
 		if(soyElGestorAvion == null) {
 			soyElGestorAvion = new GestorAvion();
@@ -42,6 +48,20 @@ public class GestorAvion {
 			}
 		}
 		return false;
+	}
+
+	public LinkedList<Avion> getColeccionAviones() {
+		// TODO Auto-generated method stub
+		return aviones;
+	}
+
+	public int horasVueloAvion(Collection<Vuelo> crearVuelos, Avion pAvion) {
+		int hs = 0;
+		for (Vuelo vuelo : crearVuelos) {
+			if(vuelo.getAvion().getIdAvion() == pAvion.getIdAvion())
+				hs += (vuelo.duracionHoras()*60 ) + vuelo.duracionMinutos() ; 
+		}
+		return hs/60;
 	}
 	
 }
