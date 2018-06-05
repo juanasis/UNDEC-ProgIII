@@ -79,7 +79,6 @@ class GestorAvionTest {
 		
 		GestorAvion elGestor = new GestorAvion(new LinkedList<Avion>());
 		int horasVuelo = elGestor.horasVueloAvion(crearVuelos(),avion1);
-		System.out.println("horas de vuelo 15  = "+horasVuelo);
 		assertEquals(15, horasVuelo);
 
 	}

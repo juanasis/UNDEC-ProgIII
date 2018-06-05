@@ -27,7 +27,7 @@ public class GestorAvion {
 	
 
 	public boolean crearAvion(Avion pAvion)throws AvionMalCargadoExeption{
-		try { if(pAvion.getListaAsientos() != null && pAvion.getIdAvion() > 0 ) {
+		try { if(pAvion.getIdAvion() > 0 && pAvion.getModelo() != null && pAvion.getMatricula() != null) {
 				if(!existeAvion(pAvion)) {
 					return aviones.add(pAvion);
 			}
@@ -43,7 +43,7 @@ public class GestorAvion {
 	}
 	private boolean existeAvion(Avion a){
 		for(Avion aux: aviones){
-			if (aux.getIdAvion() == a.getIdAvion() || aux.getMatricula() == a.getMatricula() ){
+			if (aux.getIdAvion() == a.getIdAvion() || aux.getMatricula().toUpperCase() == a.getMatricula().toUpperCase() ){
 				return true;
 			}
 		}
