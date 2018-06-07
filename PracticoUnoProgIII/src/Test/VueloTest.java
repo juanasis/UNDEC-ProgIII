@@ -1,7 +1,9 @@
 package Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+
 import java.time.LocalDateTime;
+
 import org.junit.jupiter.api.Test;
 
 import practiUno.Aerolinea;
@@ -25,6 +27,21 @@ class VueloTest {
 				+ "Operado por Austral. Duración 1h 35m";
 		System.out.println(output);
 		assertEquals(expected, output);
+
+	}
+
+	// Para este test, se requiere crear una Interface que provea la funcionalidad
+	// de dar la fecha en Español. La clase Vuelo debe implementar esa interface
+	// El método "fechaHoraSpanish" no es un método "normal" de la clase Vuelo, sino
+	// la implementación de un método de interface
+	@Test
+	void fechaHoraSpanish_LocalDateTimeValue_ReturnsFormatted() {
+		LocalDateTime departureDateTime = LocalDateTime.of(2018, 06, 07, 13, 10);
+		Vuelo aFlight = new Vuelo("", null, departureDateTime, null, null, null, null, null, null);
+
+		String dateFormatted = aFlight.fechaHoraSpanish(departureDateTime);
+
+		assertEquals("Jueves 7 de junio 13:10", dateFormatted);
 
 	}
 
