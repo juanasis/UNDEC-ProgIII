@@ -2,6 +2,7 @@ package practiUno;
 
 //import java.time.LocalDate;
 import java.time.*;
+import java.util.Collection;
 import java.util.LinkedList;
 
 public class Vuelo {
@@ -12,12 +13,12 @@ public class Vuelo {
 	private Aeropuerto arribo;
 	private LocalDateTime fechaHoraArribo;
 	private Aerolinea aerolinea;
-	private LinkedList<Piloto> pilotos;
+	private Collection<Piloto> pilotos;
 	private Avion avion;
-	private LinkedList<Asignacion> pasajeros;
+	private Collection<Asignacion> pasajeros;
 	public Vuelo(String codigoVuelo, Aeropuerto salida, LocalDateTime fechaHoraSalida, Aeropuerto arribo,
-			LocalDateTime fechaHoraArribo, Aerolinea aerolinea, LinkedList<Piloto> pilotos, Avion avion,
-			LinkedList<Asignacion> pasajeros) {
+			LocalDateTime fechaHoraArribo, Aerolinea aerolinea, Collection<Piloto> tripulacion, Avion avion,
+			Collection<Asignacion> pasajeros) {
 		super();
 		this.codigoVuelo = codigoVuelo;
 		this.salida = salida;
@@ -25,10 +26,13 @@ public class Vuelo {
 		this.arribo = arribo;
 		this.fechaHoraArribo = fechaHoraArribo;
 		this.aerolinea = aerolinea;
-		this.pilotos = pilotos;
+		this.pilotos = tripulacion;
 		this.avion = avion;
 		this.pasajeros = pasajeros;
 	}
+
+	
+
 	public String getCodigoVuelo() {
 		return codigoVuelo;
 	}
@@ -65,10 +69,10 @@ public class Vuelo {
 	public void setAerolinea(Aerolinea aerolinea) {
 		this.aerolinea = aerolinea;
 	}
-	public LinkedList<Piloto> getPilotos() {
+	public Collection<Piloto> getPilotos() {
 		return pilotos;
 	}
-	public void setPilotos(LinkedList<Piloto> pilotos) {
+	public void setPilotos(Collection<Piloto> pilotos) {
 		this.pilotos = pilotos;
 	}
 	public Avion getAvion() {
@@ -77,10 +81,10 @@ public class Vuelo {
 	public void setAvion(Avion avion) {
 		this.avion = avion;
 	}
-	public LinkedList<Asignacion> getPasajeros() {
+	public Collection<Asignacion> getPasajeros() {
 		return pasajeros;
 	}
-	public void setPasajeros(LinkedList<Asignacion> pasajeros) {
+	public void setPasajeros(Collection<Asignacion> pasajeros) {
 		this.pasajeros = pasajeros;
 	}
 	@Override

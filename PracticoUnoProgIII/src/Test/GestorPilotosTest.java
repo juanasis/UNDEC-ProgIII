@@ -9,9 +9,9 @@ import java.util.LinkedList;
 
 import org.junit.jupiter.api.Test;
 
-import ar.edu.undec.prog3.domain.Piloto;
-import ar.edu.undec.prog3.domain.Vuelo;
-import gestor.GestorPilotos;
+
+import controlador.GestorPilotos;
+import practiUno.*;
 
 class GestorPilotosTest {
 
@@ -20,7 +20,7 @@ class GestorPilotosTest {
 		Piloto piloto1 = new Piloto(1, "Perez", "Juan Antonio", "07071970", LocalDate.of(1984, 1, 31));
 		GestorPilotos elGestor = new GestorPilotos(new LinkedList<Piloto>());
 		int horasVuelo = elGestor.horasVueloPiloto(crearVuelos(), piloto1);
-		assertEquals(15, horasVuelo);
+				assertEquals(15, horasVuelo);
 	}
 
 	protected Collection<Vuelo> crearVuelos() {
