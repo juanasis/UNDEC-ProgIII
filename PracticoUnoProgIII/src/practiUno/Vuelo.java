@@ -5,7 +5,9 @@ import java.time.*;
 import java.util.Collection;
 import java.util.LinkedList;
 
-public class Vuelo {
+import Utilidades.dateFormatted;;
+
+public class Vuelo implements dateFormatted {
 	
 	private String codigoVuelo;
 	private Aeropuerto salida;
@@ -169,7 +171,19 @@ public class Vuelo {
 		+ "\r\n"+traductorDia(fechaHoraArribo.getDayOfWeek())  + " "+
 				fechaHoraArribo.getDayOfMonth()+  " de "+traductorMes(fechaHoraArribo.getMonth())+" "+ fechaHoraArribo.getHour()+":"+ fechaHoraArribo.getMinute() + " " + arribo.getCodigo() + " ("+arribo.verCiudad()+" - "+arribo.getNombre()+
 		")\r\nOperado por "+ aerolinea.getNombre() +". Duración "+ duracionHsMin() ;
-	} 
+	}
+
+
+
+	@Override
+	public String fechaHoraSpanish(LocalDateTime pFechaHora) {
+		// TODO Auto-generated method stub
+		return dateFormatted.super.fechaHoraSpanish(pFechaHora);
+	}
+
+
+
+	
 	
 
 	
