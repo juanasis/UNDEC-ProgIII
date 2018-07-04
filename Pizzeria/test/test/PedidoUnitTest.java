@@ -13,18 +13,18 @@ class PedidoUnitTest {
 
 	@Test
 	void instanciarPedido_pedidoSinPizza_ReturnFalse() {
-		Pizza pizzaNapolitana=new Pizza("Napolitana",100.80d,new Base("Masa tipo"),cubiertaNapolitana());
-		Pedido unPedido = new Pedido("Perez, Juan","San Martin 123",0d,LocalDate.of(2018, 07, 02),unaPizza);
+		Pizza pizzaNapolitana=new Pizza("Napolitana",100.80,new Base("Masa tipo"),cubiertaNapolitana());
+		Pedido unPedido = new Pedido("Perez, Juan","San Martin 123",0,LocalDate.of(2018, 07, 02),pizzaNapolitana);
 		
 		assertEquals(1, unPedido.getPizzas().size());
 	}
 	
 	@Test
 	void agregarPizza_pedidoConPizza_incrementaColeccion() {
-		Pizza pizzaNapolitana=new Pizza("Napolitana",100.80d,new Base("Masa tipo"),cubiertaNapolitana());
-		Pedido unPedido = new Pedido("Perez, Juan","San Martin 123",0d,LocalDate.of(2018, 07, 02),unaPizza);
+		Pizza pizzaNapolitana=new Pizza("Napolitana",100.80,new Base("Masa tipo"),cubiertaNapolitana());
+		Pedido unPedido = new Pedido("Perez, Juan","San Martin 123",0,LocalDate.of(2018, 07, 02),pizzaNapolitana);
 		
-		Pizza pizzaFugazzeta = new Pizza("Fugazzeta", 150.25d, new Base("Masa tipo"), cubiertaFugazzeta());
+		Pizza pizzaFugazzeta = new Pizza("Fugazzeta", 150.25, new Base("Masa tipo"), cubiertaFugazzeta());
 		unPedido.agregarPizza(pizzaFugazzeta);
 		
 		assertEquals(2, unPedido.getPizzas().size());

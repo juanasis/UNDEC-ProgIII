@@ -213,13 +213,14 @@ public class Test {
 	for(Avion a:aviones){
 		System.out.println(a.getModelo()+" "+a.getMatricula()+" - "+a.getHs()+" hs de Vuelo");
 	}
-	/*○	Ranking de pilotos con más horas de vuelo.*/
+	/*○	Ranking de pilotos con más horas de vuelo.
 	for(Piloto p:pilotos) {
 		for(Vuelo v:vuelos) {
 			if(p.getIdPiloto() == v.getPilotos().get(0).getIdPiloto() || p.getIdPiloto() == v.getPilotos().get(1).getIdPiloto() )
 				p.agregarHs(v.duracionHoras());
 		}
 	}
+	*/
 	
 	Collections.sort(pilotos, new ordenarPorHs());
 	for(Piloto p:pilotos) {
@@ -229,4 +230,5 @@ public class Test {
 
 	}
 	
-}
+	}
+
